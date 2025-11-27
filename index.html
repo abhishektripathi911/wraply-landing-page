@@ -1,0 +1,1327 @@
+# Query: 
+# ContextLines: 1
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wraply.AI – Closeout Made Effortless</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Wraply.AI is the AI-powered closeout and turnover platform for construction teams. Closeout made effortless."
+  />
+  <style>
+    :root {
+      --primary: #0a84ff;
+      --secondary: #1c1c1e;
+      --accent: #34c759;
+      --bg: #f2f2f7;
+      --text: #000000;
+      --muted-text: #333333;
+      --card-bg: #ffffff;
+      --border: #e0e0e5;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.06);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --transition-fast: 0.2s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+      background-color: var(--bg);
+      color: var(--muted-text);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(242, 242, 247, 0.85);
+      border-bottom: 1px solid rgba(224, 224, 229, 0.7);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-mark {
+      height: 32px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--secondary);
+      letter-spacing: 0.04em;
+    }
+
+    .logo-text-sub {
+      font-size: 0.78rem;
+      color: #6b6b75;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--primary);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .btn {
+      border-radius: var(--radius-pill);
+      padding: 0.55rem 1.4rem;
+      border: 1px solid transparent;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background var(--transition-fast),
+        color var(--transition-fast), border-color var(--transition-fast),
+        transform var(--transition-fast), box-shadow var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #0a84ff, #0070e8);
+      color: #ffffff;
+      box-shadow: 0 14px 30px rgba(10, 132, 255, 0.35);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 38px rgba(10, 132, 255, 0.42);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--secondary);
+      border-color: rgba(28, 28, 30, 0.12);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      background: rgba(10, 132, 255, 0.06);
+    }
+
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: transparent;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: var(--secondary);
+    }
+
+    /* Hero */
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 3.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.22rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(10, 132, 255, 0.25);
+      background: rgba(10, 132, 255, 0.06);
+      color: #0352a6;
+      font-size: 0.75rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 3.4vw, 3rem);
+      line-height: 1.05;
+      color: var(--secondary);
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      color: #4a4a55;
+      margin-bottom: 1.4rem;
+      max-width: 480px;
+    }
+
+    .hero-highlight {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: #6b6b75;
+    }
+
+    .hero-note strong {
+      color: var(--secondary);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #0a84ff 0, #1c1c1e 52%);
+      border-radius: 26px;
+      padding: 1.6rem 1.5rem;
+      color: #f8f8ff;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 10px;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    .hero-chip {
+      padding: 0.2rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-card-sub {
+      font-size: 0.78rem;
+      color: rgba(245, 245, 255, 0.85);
+    }
+
+    .hero-metrics {
+      margin-top: 0.9rem;
+      padding-top: 0.9rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.16);
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.7rem;
+      font-size: 0.75rem;
+    }
+
+    .metric-label {
+      color: rgba(235, 235, 255, 0.8);
+      margin-bottom: 0.15rem;
+    }
+
+    .metric-value {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .metric-value.accent {
+      color: #34c759;
+    }
+
+    .metric-tag {
+      font-size: 0.75rem;
+      color: rgba(235, 235, 255, 0.8);
+      margin-top: 1rem;
+    }
+
+    /* Sections */
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 2.5rem 1.5rem;
+      scroll-margin-top: 90px;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      max-width: 720px;
+      margin-bottom: 1.7rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #7b7b85;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      color: var(--secondary);
+      margin-bottom: 0.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: #555562;
+    }
+
+    /* Problem */
+
+    .grid-problem {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 28px rgba(15, 15, 20, 0.06);
+      padding: 1.1rem 1.1rem 1rem;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .card-body {
+      font-size: 0.88rem;
+      color: #4b4b57;
+    }
+
+    /* Solution */
+
+    .solution-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: start;
+    }
+
+    .solution-list {
+      list-style: none;
+      display: grid;
+      gap: 0.85rem;
+      font-size: 0.9rem;
+    }
+
+    .solution-item {
+      padding: 0.7rem 0.8rem;
+      border-radius: 12px;
+      background: rgba(10, 132, 255, 0.03);
+      border: 1px solid rgba(10, 132, 255, 0.12);
+    }
+
+    .solution-item strong {
+      color: var(--secondary);
+    }
+
+    .solution-panel {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px dashed rgba(10, 132, 255, 0.4);
+      padding: 1rem 1.1rem;
+      font-size: 0.85rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pseudo-label {
+      display: inline-flex;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #7b7b85;
+      margin-bottom: 0.4rem;
+    }
+
+    .solution-tagline {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .solution-desc {
+      font-size: 0.86rem;
+      color: #52525f;
+    }
+
+    /* NEW: animated messy docs -> organized folders */
+
+    .doc-flow {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0.4rem 0 0.5rem;
+    }
+
+    .doc-cloud {
+      position: relative;
+      width: 90px;
+      height: 72px;
+    }
+
+    .doc-file {
+      position: absolute;
+      width: 26px;
+      height: 32px;
+      border-radius: 4px;
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.18);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      transform-origin: center;
+      animation: fileFly 5.5s ease-in-out infinite;
+      opacity: 0;
+    }
+
+    .doc-file::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 12px;
+      height: 10px;
+      background: linear-gradient(135deg, rgba(10, 132, 255, 0.08), rgba(10, 132, 255, 0.18));
+      clip-path: polygon(0 0, 100% 0, 100% 100%);
+    }
+
+    .doc-file::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 9px;
+      width: 70%;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.16);
+      box-shadow:
+        0 4px 0 rgba(0, 0, 0, 0.12),
+        0 8px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    /* messy starting positions */
+    .doc-file.f1 { top: 4px; left: 8px;  animation-delay: 0s; }
+    .doc-file.f2 { top: 18px; left: 30px; animation-delay: 0.4s; }
+    .doc-file.f3 { top: 34px; left: 4px;  animation-delay: 0.8s; }
+    .doc-file.f4 { top: 8px; left: 46px; animation-delay: 1.2s; }
+    .doc-file.f5 { top: 28px; left: 56px; animation-delay: 1.6s; }
+
+    @keyframes fileFly {
+      0% {
+        transform: translate(4px, -4px) rotate(-10deg);
+        opacity: 0.2;
+      }
+      20% {
+        transform: translate(-6px, 8px) rotate(12deg);
+        opacity: 0.6;
+      }
+      40% {
+        transform: translate(2px, -2px) rotate(-4deg);
+        opacity: 0.9;
+      }
+      60% {
+        /* flying toward the folders on the right */
+        transform: translate(70px, 0) rotate(0deg);
+        opacity: 1;
+      }
+      80% {
+        transform: translate(76px, 0) scale(0.7);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translate(76px, 0) scale(0.4);
+        opacity: 0;
+      }
+    }
+
+    .doc-arrows {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0.2rem;
+    }
+
+    .doc-arrow {
+      width: 22px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(120, 120, 128, 0.35), rgba(10, 132, 255, 0.85));
+      position: relative;
+      opacity: 0.7;
+      animation: arrowPulse 1.8s ease-in-out infinite;
+    }
+
+    .doc-arrow::after {
+      content: "";
+      position: absolute;
+      right: -3px;
+      top: 50%;
+      width: 0;
+      height: 0;
+      transform: translateY(-50%);
+      border-left: 5px solid rgba(10, 132, 255, 0.85);
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+    }
+
+    .doc-arrow.a2 { animation-delay: 0.2s; }
+    .doc-arrow.a3 { animation-delay: 0.4s; }
+
+    @keyframes arrowPulse {
+      0% { transform: translateX(0); opacity: 0.4; }
+      40% { transform: translateX(3px); opacity: 0.9; }
+      100% { transform: translateX(0); opacity: 0.4; }
+    }
+
+    .doc-folders {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.25rem 0.4rem;
+      min-width: 110px;
+    }
+
+    .doc-folder {
+      position: relative;
+      width: 32px;
+      height: 22px;
+      border-radius: 6px;
+      border: 1.5px solid rgba(120, 120, 128, 0.6);
+      background: linear-gradient(135deg, rgba(250, 250, 252, 1), rgba(230, 230, 240, 0.7));
+    }
+
+    .doc-folder::before {
+      content: "";
+      position: absolute;
+      left: 3px;
+      top: -4px;
+      width: 16px;
+      height: 8px;
+      border-radius: 5px 5px 0 0;
+      border: 1.5px solid currentColor;
+      border-bottom: none;
+      background: inherit;
+    }
+
+    .folder-gold    { color: #f5a623; }
+    .folder-green   { color: #34c759; }
+    .folder-blue    { color: #0a84ff; }
+    .folder-orange  { color: #ff6a30; }
+    .folder-gray    { color: #8e8e93; }
+    .folder-black   { color: #1c1c1e; }
+
+    /* Features */
+
+    .grid-features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .feature-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--secondary);
+      margin-bottom: 0.2rem;
+    }
+
+    .feature-body {
+      font-size: 0.86rem;
+      color: #4b4b57;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-pill {
+      display: inline-flex;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      background: rgba(28, 28, 30, 0.04);
+      color: #555;
+    }
+
+    /* How It Works */
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .step-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      padding: 1.1rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(10, 132, 255, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--primary);
+      margin-bottom: 0.45rem;
+      background: rgba(10, 132, 255, 0.05);
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--secondary);
+      margin-bottom: 0.25rem;
+    }
+
+    .step-body {
+      font-size: 0.86rem;
+      color: #4b4b57;
+    }
+
+    /* Early access */
+
+    .early-access {
+      padding-bottom: 3.2rem;
+    }
+
+    .early-box {
+      background: var(--secondary);
+      border-radius: 22px;
+      padding: 1.9rem 1.6rem;
+      color: #f8f8ff;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .early-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .early-sub {
+      font-size: 0.9rem;
+      color: rgba(230, 230, 245, 0.9);
+    }
+
+    .early-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .input {
+      padding: 0.7rem 0.9rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(12, 12, 14, 0.68);
+      color: #f8f8ff;
+      font-size: 0.88rem;
+      min-width: 0;
+      flex: 1 1 160px;
+    }
+
+    .input::placeholder {
+      color: rgba(230, 230, 245, 0.7);
+    }
+
+    .early-note {
+      font-size: 0.8rem;
+      color: rgba(220, 220, 240, 0.82);
+      margin-top: 0.3rem;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(210, 210, 220, 0.7);
+      padding: 1.4rem 1.5rem 1.7rem;
+      background: #f7f7fb;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: #6b6b75;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1.4rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--secondary);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 2.4rem;
+      }
+
+      .hero-card {
+        max-width: 420px;
+        margin: 0 auto;
+      }
+
+      .solution-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .grid-problem,
+      .grid-features,
+      .how-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .early-box {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-open .nav-links,
+      .nav-open .nav-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 0.8rem;
+      }
+
+      .nav {
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding-inline: 1.1rem;
+      }
+
+      .grid-problem,
+      .grid-features,
+      .how-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      .early-box {
+        padding: 1.5rem 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav" id="nav">
+        <div class="nav-left">
+          <img src="wraply-logo.png" alt="Wraply.AI logo" class="logo-mark" />
+          <div>
+            <div class="logo-text-main">Wraply.AI</div>
+            <div class="logo-text-sub">Closeout made effortless</div>
+          </div>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#hero">Overview</a>
+          <a href="#problem">Problem</a>
+          <a href="#solution">Solution</a>
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+        </nav>
+        <div class="nav-cta">
+          <button
+            class="btn btn-outline"
+            onclick="document.getElementById('early-access').scrollIntoView({behavior:'smooth'});"
+          >
+            Join waitlist
+          </button>
+          <button
+            class="btn btn-primary"
+            onclick="document.getElementById('hero').scrollIntoView({behavior:'smooth'});"
+          >
+            Request demo
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section id="hero">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="badge">
+              AI-powered closeout and turnover for construction teams
+            </div>
+            <h1 class="hero-title">
+              Closeout made effortless for busy project teams.
+            </h1>
+            <p class="hero-subtitle">
+              Wraply.AI is an
+              <span class="hero-highlight">AI-powered closeout and turnover
+              platform</span>
+              that turns scattered documents into a fully compliant digital
+              handover package without the last-minute scramble.
+            </p>
+            <div class="hero-actions">
+              <button
+                class="btn btn-primary"
+                onclick="document.getElementById('early-access').scrollIntoView({behavior:'smooth'});"
+              >
+                Request early access
+              </button>
+              <button class="btn btn-outline">
+                View sample closeout
+              </button>
+            </div>
+            <p class="hero-note">
+              <strong>Built for general contractors, construction managers, and owners.</strong>
+              Designed around the reality of field, office, and trade coordination.
+            </p>
+          </div>
+          <aside class="hero-card" aria-label="Sample project dashboard">
+            <div class="hero-card-header">
+              <div>
+                <div class="hero-card-title">Advanced Lab Retrofit</div>
+                <div class="hero-card-sub">Phase 2 · TI and Tool Install</div>
+              </div>
+              <div class="hero-chip">Closeout Overview</div>
+            </div>
+            <div class="hero-metrics">
+              <div>
+                <div class="metric-label">Closeout readiness</div>
+                <div class="metric-value accent">
+                  <span class="metric-number" data-target="87" data-suffix="%">0</span>
+                </div>
+              </div>
+              <div>
+                <div class="metric-label">Missing items</div>
+                <div class="metric-value">
+                  <span class="metric-number" data-target="12">0</span> docs
+                </div>
+              </div>
+              <div>
+                <div class="metric-label">Sub responses</div>
+                <div class="metric-value">
+                  <span class="metric-number" data-target="18">0</span> of 21
+                </div>
+              </div>
+            </div>
+            <p class="metric-tag">
+              Wraply.AI has flagged missing warranties, O&M manuals, and test reports and routed requests
+              to the responsible trades automatically.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Problem -->
+      <section id="problem">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">The problem</div>
+            <h2 class="section-title">
+              Closeout is still an afterthought, until it is a schedule risk.
+            </h2>
+            <p class="section-subtitle">
+              Most project teams juggle spreadsheets, email threads, and ad hoc
+              trackers. By the time the job is nearing substantial completion,
+              the closeout package is already behind and the scramble at the end
+              can strain the relationship with the owner when the project team does
+              not finish strong at closeout.
+            </p>
+          </div>
+
+          <div class="grid-problem">
+            <article class="card">
+              <h3 class="card-title">Weeks lost to manual tracking</h3>
+              <p class="card-body">
+                PMs and project engineers spend hours building registers, chasing
+                subs, and updating status columns that go out of date as soon as
+                the next email lands.
+              </p>
+            </article>
+            <article class="card">
+              <h3 class="card-title">Documents scattered everywhere</h3>
+              <p class="card-body">
+                Warranties and O&amp;M manuals live across email, Procore,
+                SharePoint, and shared drives. No single source of truth for what
+                is required versus what has actually been received.
+              </p>
+            </article>
+            <article class="card">
+              <h3 class="card-title">Owners get incomplete handover</h3>
+              <p class="card-body">
+                Operations and facilities teams inherit binders that are hard to
+                search, missing key documents, and out of sync with the final as
+                builds and submittals.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solution -->
+      <section id="solution">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">The Wraply.AI solution</div>
+            <h2 class="section-title">
+              Turn your specs, submittals, and RFIs into a live closeout engine.
+            </h2>
+            <p class="section-subtitle">
+              Wraply.AI reads your contract specs, submittals, and project docs
+              to auto build a complete closeout requirement matrix, track
+              progress in real time, and output a digital, searchable turnover
+              package. Commissioning workflows are part of our future roadmap.
+            </p>
+          </div>
+
+          <div class="solution-layout">
+            <ul class="solution-list">
+              <li class="solution-item">
+                <strong>AI closeout matrix.</strong>
+                Automatically maps required warranties, O&amp;M manuals, test
+                reports, training, and spare parts from your specs and
+                submittals.
+              </li>
+              <li class="solution-item">
+                <strong>Automated sub workflows.</strong>
+                Routes requests to each subcontractor, tracks responses, and
+                highlights what is missing or non compliant.
+              </li>
+              <li class="solution-item">
+                <strong>Digital turnover binder.</strong>
+                Outputs a structured, searchable closeout package that aligns
+                with owner requirements and future facilities use.
+              </li>
+              <li class="solution-item">
+                <strong>Fits your existing stack.</strong>
+                Works alongside Procore, CMiC, SharePoint, and your current
+                document management workflows.
+              </li>
+            </ul>
+
+            <aside class="solution-panel">
+              <span class="pseudo-label">Example</span>
+              <div class="solution-tagline">
+                From messy documents to an organized closeout matrix.
+              </div>
+
+              <!-- Animated docs -> folders visualization -->
+              <div class="doc-flow" aria-hidden="true">
+                <div class="doc-cloud">
+                  <div class="doc-file f1"></div>
+                  <div class="doc-file f2"></div>
+                  <div class="doc-file f3"></div>
+                  <div class="doc-file f4"></div>
+                  <div class="doc-file f5"></div>
+                </div>
+
+                <div class="doc-arrows">
+                  <div class="doc-arrow a1"></div>
+                  <div class="doc-arrow a2"></div>
+                  <div class="doc-arrow a3"></div>
+                </div>
+
+                <div class="doc-folders">
+                  <div class="doc-folder folder-gold"></div>
+                  <div class="doc-folder folder-gold"></div>
+                  <div class="doc-folder folder-orange"></div>
+                  <div class="doc-folder folder-blue"></div>
+                  <div class="doc-folder folder-green"></div>
+                  <div class="doc-folder folder-gray"></div>
+                </div>
+              </div>
+
+              <p class="solution-desc">
+                Wraply.AI takes messy, unstructured documents and continuously
+                routes them into the right “folders” by spec, division, trade,
+                and requirement status—so by the time you reach substantial
+                completion, your closeout matrix is already organized instead of
+                being a last-minute scramble.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">Key capabilities</div>
+            <h2 class="section-title">
+              Everything you need to move closeout from reactive to proactive.
+            </h2>
+          </div>
+
+          <div class="grid-features">
+            <article class="card">
+              <h3 class="feature-title">AI closeout checker</h3>
+              <p class="feature-body">
+                Detects missing warranties, O&amp;M, test reports, training
+                records, and attic stock based on your specs and submittals.
+              </p>
+              <span class="feature-pill">Spec aware</span>
+            </article>
+
+            <article class="card">
+              <h3 class="feature-title">Automated document collection</h3>
+              <p class="feature-body">
+                Sends structured requests to subs, tracks responses, and
+                organizes everything directly against the requirement matrix.
+              </p>
+              <span class="feature-pill">Sub friendly</span>
+            </article>
+
+            <article class="card">
+              <h3 class="feature-title">Smart turnover binder</h3>
+              <p class="feature-body">
+                Generates a digital binder that can be filtered by system,
+                equipment, spec section, and responsible trade.
+              </p>
+              <span class="feature-pill">Owner ready</span>
+            </article>
+
+            <article class="card">
+              <h3 class="feature-title">Compliance and audit trail</h3>
+              <p class="feature-body">
+                Maintains a clear record of who submitted what, when, and how
+                it ties back to your contract documents.
+              </p>
+              <span class="feature-pill">Defensible</span>
+            </article>
+
+            <article class="card">
+              <h3 class="feature-title">Real time dashboards</h3>
+              <p class="feature-body">
+                Live visibility into closeout progress by division, trade,
+                owner requirement, and key milestone.
+              </p>
+              <span class="feature-pill">At a glance</span>
+            </article>
+
+            <article class="card">
+              <h3 class="feature-title">Lifecycle ready</h3>
+              <p class="feature-body">
+                Designed as a building block for a lifecycle turnkey
+                platform that spans from preconstruction to operations.
+              </p>
+              <span class="feature-pill">Future facing</span>
+            </article>
+
+            <article class="card">
+              <h3 class="feature-title">Commissioning alignment (coming soon)</h3>
+              <p class="feature-body">
+                Planned workflows to link closeout deliverables with commissioning
+                checklists, functional testing, and startup logs so project turnover
+                and commissioning stay in sync.
+              </p>
+              <span class="feature-pill">On roadmap</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- How it works -->
+      <section id="how-it-works">
+        <div class="section-inner">
+          <div class="section-header">
+            <div class="section-kicker">How it works</div>
+            <h2 class="section-title">
+              Three steps from scattered documents to a clean digital handover.
+            </h2>
+          </div>
+
+          <div class="how-grid">
+            <article class="step-card">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Connect your project</h3>
+              <p class="step-body">
+                Upload your specs, submittals, and closeout requirements or
+                connect your existing document sources. Wraply.AI builds a
+                structured requirement matrix automatically.
+              </p>
+            </article>
+            <article class="step-card">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Engage subs and collect docs</h3>
+              <p class="step-body">
+                Wraply.AI sends targeted requests, tracks responses, and
+                validates submissions for completeness and contract alignment.
+              </p>
+            </article>
+            <article class="step-card">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Export a digital closeout package</h3>
+              <p class="step-body">
+                Generate an organized, searchable turnover package that your
+                owner can trust and your operations team can actually use.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Early access -->
+      <section id="early-access" class="early-access">
+        <div class="section-inner">
+          <div class="early-box">
+            <div>
+              <h2 class="early-title">Be part of the first cohort of projects.</h2>
+              <p class="early-sub">
+                We are onboarding a limited number of projects with general
+                contractors and owners who want to transform closeout and
+                turnover. Share a bit about your project and we will follow up
+                with next steps.
+              </p>
+              <p class="early-note">
+                Transparent pricing, implementation support, and early design
+                input for pilot partners.
+              </p>
+            </div>
+            <form class="early-form" id="earlyAccessForm">
+              <input
+                type="email"
+                class="input"
+                name="email"
+                placeholder="Work email"
+                required
+              />
+              <button type="submit" class="btn btn-primary">
+                Join waitlist
+              </button>
+              <input
+                type="text"
+                class="input"
+                name="company"
+                placeholder="Company / role (optional)"
+              />
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>
+          Wraply.AI &copy; <span id="year"></span>. All rights reserved.
+        </div>
+        <div class="footer-links">
+          <a href="#hero">Overview</a>
+          <a href="#features">Features</a>
+          <a href="#early-access">Contact</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile nav toggle
+    const nav = document.getElementById("nav");
+    const navToggle = document.getElementById("navToggle");
+
+    navToggle.addEventListener("click", () => {
+      nav.classList.toggle("nav-open");
+    });
+
+    // Early access form handler
+    const earlyForm = document.getElementById("earlyAccessForm");
+    earlyForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = this.email.value.trim();
+      const company = this.company.value.trim();
+
+      if (!email) return;
+
+      alert(
+        "Thank you for your interest in Wraply.AI.\n\nIn a production environment this form would send your details to our backend or email list. For now, your test submission has been captured locally."
+      );
+
+      this.reset();
+    });
+
+    // Dynamic metrics animation
+    function animateMetric(el, duration = 1200) {
+      const target = Number(el.getAttribute("data-target") || "0");
+      const suffix = el.getAttribute("data-suffix") || "";
+      const start = 0;
+      const startTime = performance.now();
+
+      function frame(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(start + (target - start) * progress);
+        el.textContent = value + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        }
+      }
+
+      requestAnimationFrame(frame);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const metricEls = document.querySelectorAll(".metric-number");
+      metricEls.forEach((el) => animateMetric(el));
+    });
+
+    // Footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear().toString();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
